@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Macos on Brian Murray</title>
+    <link>https://example.org/tags/macos/</link>
+    <description>Recent content in Macos on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started With Homebrew</title>
+      <link>https://example.org/posts/getting-started-with-homebrew/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/getting-started-with-homebrew/</guid>
+      <description>&lt;h2 id=&#34;what-is-homebrew&#34;&gt;What Is Homebrew&lt;/h2&gt;
+&lt;p&gt;Homebrew is an awesome package manager for macOS. If you&amp;rsquo;re familiar with linux then you&amp;rsquo;ll feel right at home using Homebrew. All the information you&amp;rsquo;ll ever need to know about Homebrew can be found at &lt;a href=&#34;https://brew.sh/&#34;&gt;https://brew.sh/&lt;/a&gt;.  By the end of this article you&amp;rsquo;ll have a better understanding of how to use Homebrew.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started!&lt;/p&gt;
+&lt;h2 id=&#34;installing-homebrew&#34;&gt;Installing Homebrew&lt;/h2&gt;
+&lt;p&gt;To begin installing Homebrew copy and paste the command sequence below into your favorite terminal.  Alternatively, you can copy &amp;amp; paste the exact same command sequence from &lt;a href=&#34;https://brew.sh/&#34;&gt;https://brew.sh/&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hardware on Brian Murray</title>
+    <link>https://example.org/tags/hardware/</link>
+    <description>Recent content in Hardware on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Mar 2024 16:31:48 -0500</lastBuildDate>
+    <atom:link href="https://example.org/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HP865 G9 Elitebook Review</title>
+      <link>https://example.org/posts/hp865-g9-elitebook-review/</link>
+      <pubDate>Wed, 06 Mar 2024 16:31:48 -0500</pubDate>
+      <guid>https://example.org/posts/hp865-g9-elitebook-review/</guid>
+      <description>&lt;p&gt;I’ve been using the same laptop since 2015. It’s not the only laptop I own, but it&amp;rsquo;s the one I use the most. It’s the very reliable Mid-2015 15-inch MacBook Pro. Anyone familiar with the mid-2015 model knows it’s a very well-built and reliable laptop. However, I was in search of a new laptop to replace the MacBook Pro. I had a few specific requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgradeable RAM, storage, WiFi, etc. The more, the better.&lt;/li&gt;
+&lt;li&gt;15-inch display with adequate brightness and color accuracy.&lt;/li&gt;
+&lt;li&gt;Rigid chassis as laptops with too much flex tend to break easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My usage requirements are pretty straightforward. I like to move around the house when working on projects and didn’t want to be confined to just my office. Hence, a 15-inch screen is a must. Linux support is also crucial, as Linux is my operating system of choice. I run Debian or Debian-based operating systems on all of my computers and servers. I&amp;rsquo;m a very casual gamer, so a dedicated Graphics Processing Unit (GPU) is not needed, which immediately ruled out all gaming laptops. Integrated AMD or Intel graphics suffice for my needs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,67 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Brian Murray
+theme: ["PaperMod"]
+
+pagination:
+  disableAliases: false
+  pagerSize: 5
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: About
+          url: about
+          weight: 5
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+params:
+  defaultTheme: dark
+  disableThemeToggle: true
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowToc: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  homeInfoParams:
+    Title: Hi There....
+    Content: >
+      Enjoy reading my thoughts on technology and security.
+      
+  assets:
+    favicon: "/icons/favicon.ico"
+    favicon16x16: "/icons/favicon-16x16.png"
+    favicon32x32: "/icons/favicon-32x32.png"
+
+  socialIcons:
+    - name: Mastodon
+      title: follow me on mastodon
+      url: "https://infosec.exchange/@bry_n"
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/bry-n"
+    - name: Medium
+      title: Read this on Medium
+      url: "https://medium.com/@brian_murray"

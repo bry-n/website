@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Getting Started With Tmux | Brian Murray</title>
+<meta name="keywords" content="linux, tools">
+<meta name="description" content="What is Tmux
+Tmux is an awesome terminal multiplexor.  It&rsquo;s a command line tool which will allow you to run multiple programs from within Tmux.  Let&rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. ">
+<meta name="author" content="Brian">
+<link rel="canonical" href="https://example.org/posts/getting-started-with-tmux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/getting-started-with-tmux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://example.org/posts/getting-started-with-tmux/">
+  <meta property="og:site_name" content="Brian Murray">
+  <meta property="og:title" content="Getting Started With Tmux">
+  <meta property="og:description" content="What is Tmux Tmux is an awesome terminal multiplexor. It’s a command line tool which will allow you to run multiple programs from within Tmux. Let’s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-11-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-11-19T00:00:00+00:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Getting Started With Tmux">
+<meta name="twitter:description" content="What is Tmux
+Tmux is an awesome terminal multiplexor.  It&rsquo;s a command line tool which will allow you to run multiple programs from within Tmux.  Let&rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. ">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://example.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Getting Started With Tmux",
+      "item": "https://example.org/posts/getting-started-with-tmux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Getting Started With Tmux",
+  "name": "Getting Started With Tmux",
+  "description": "What is Tmux Tmux is an awesome terminal multiplexor. It\u0026rsquo;s a command line tool which will allow you to run multiple programs from within Tmux. Let\u0026rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. ",
+  "keywords": [
+    "linux", "tools"
+  ],
+  "articleBody": "What is Tmux Tmux is an awesome terminal multiplexor. It’s a command line tool which will allow you to run multiple programs from within Tmux. Let’s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. When we start a Tmux session we start off with a single window with a single pane. From here we have a few options. Keep in mind these are just a few samples. There’s so much more that you can do with Tmux.\nWe can immediately start using the terminal. We can split the pane as needed and have more than one active terminal. We can create more than one window. We can start a program and then detach from the session. One of Tmux’s greatest strengths is that it runs as a process. Tmux can detach and reattach sessions. Let’s say you use ssh to connect to a server hosted with your favorite cloud provider. Maybe you use this server to run port scans on your home network to check for open ports. If you are using Tmux and your ssh session dies, you can just reconnect to your server and attach to the Tmux session which has your port scan running. If you are not using Tmux, you will have to start the scan over after reconnecting to your server.\nLet’s get started on how to use Tmux.\nInstalling Tmux MacOS (brew install tmux) Debian Linux (apt install tmux) Most Linux Distrobutions have a Tmux package Windows doesn’t have a Tmux package but it can be used with WSL (Windows Subsystem for Linux). Using Tmux Tmux can be used by simply typing tmux in the terminal. Once, you’re in a Tmux session you can use ctrl-b to activate in session commands. The ctrl-b command sequence allows you to split panes, create new windows, detach active sessions etc.\nHelpful Commands To Start Key Command Description tmux Start a session tmux new -s Test Start a new session called Test tmux ls List any active sessions tmux attach -t # Connect to an active session (# = session number) tmux rename-session -t # new_name Rename a session (# = session number) Helpful Commands For Interacting With Active Sessions Key Command Description exit or ctrl-d Exit an active session, window, or pane ctrl-b then shift-5 Create another pane ctrl-b then arrow keys Move between panes ctrl-b then c Create a new window ctrl-b then n Move to the next window ctrl-b then p Move to the previous window ctrl-b then d Detach current session ctrl-b then D Detach session of choice Conclusion There you have it! The very basics of installing and using Tmux to enhance your terminal experience. We only scratched the surface of what Tmux is capable of, so continue learning by visiting https://github.com/tmux/tmux/wiki/Getting-Started!\n",
+  "wordCount" : "504",
+  "inLanguage": "en",
+  "datePublished": "2022-11-19T00:00:00Z",
+  "dateModified": "2022-11-19T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Brian"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.org/posts/getting-started-with-tmux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Brian Murray",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="Brian Murray (Alt + H)">Brian Murray</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://example.org/">Home</a>&nbsp;»&nbsp;<a href="https://example.org/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Getting Started With Tmux
+    </h1>
+    <div class="post-meta"><span title='2022-11-19 00:00:00 +0000 UTC'>November 19, 2022</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Brian</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#what-is-tmux" aria-label="What is Tmux">What is Tmux</a></li>
+                <li>
+                    <a href="#installing-tmux" aria-label="Installing Tmux">Installing Tmux</a></li>
+                <li>
+                    <a href="#using-tmux" aria-label="Using Tmux">Using Tmux</a></li>
+                <li>
+                    <a href="#helpful-commands-to-start" aria-label="Helpful Commands To Start">Helpful Commands To Start</a></li>
+                <li>
+                    <a href="#helpful-commands-for-interacting-with-active-sessions" aria-label="Helpful Commands For Interacting With Active Sessions">Helpful Commands For Interacting With Active Sessions</a></li></ul>
+                    
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="what-is-tmux">What is Tmux<a hidden class="anchor" aria-hidden="true" href="#what-is-tmux">#</a></h2>
+<p>Tmux is an awesome terminal multiplexor.  It&rsquo;s a command line tool which will allow you to run multiple programs from within Tmux.  Let&rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. </p>
+<p>When we start a Tmux session we start off with a single window with a single pane. From here we have a few options. Keep in mind these are just a few samples. There&rsquo;s so much more that you can do with Tmux.</p>
+<ul>
+<li>We can immediately start using the terminal.</li>
+<li>We can split the pane as needed and have more than one active terminal.</li>
+<li>We can create more than one window.</li>
+<li>We can start a program and then detach from the session.</li>
+</ul>
+<p>One of Tmux&rsquo;s greatest strengths is that it runs as a process. Tmux can detach and reattach sessions. Let&rsquo;s say you use ssh to connect to a server hosted with your favorite cloud provider.  Maybe you use this server to run port scans on your home network to check for open ports. If you are using Tmux and your ssh session dies, you can just reconnect to your server and attach to the Tmux session which has your port scan running. If you are not using Tmux, you will have to start the scan over after reconnecting to your server.</p>
+<p>Let&rsquo;s get started on how to use Tmux.</p>
+<h2 id="installing-tmux">Installing Tmux<a hidden class="anchor" aria-hidden="true" href="#installing-tmux">#</a></h2>
+<ul>
+<li>MacOS (<code>brew install tmux</code>)</li>
+<li>Debian Linux (<code>apt install tmux</code>)</li>
+<li>Most Linux Distrobutions have a Tmux package</li>
+<li>Windows doesn&rsquo;t have a Tmux package but it can be used with WSL (Windows Subsystem for Linux).</li>
+</ul>
+<h2 id="using-tmux">Using Tmux<a hidden class="anchor" aria-hidden="true" href="#using-tmux">#</a></h2>
+<p>Tmux can be used by simply typing <code>tmux</code> in the terminal.  Once, you&rsquo;re in a Tmux session you can use <code>ctrl-b</code> to activate in session commands.  The ctrl-b command sequence allows you to split panes, create new windows, detach active sessions etc.</p>
+<h2 id="helpful-commands-to-start">Helpful Commands To Start<a hidden class="anchor" aria-hidden="true" href="#helpful-commands-to-start">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Key Command</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>tmux</td>
+          <td>Start a session</td>
+      </tr>
+      <tr>
+          <td>tmux new -s Test</td>
+          <td>Start a new session called Test</td>
+      </tr>
+      <tr>
+          <td>tmux ls</td>
+          <td>List any active sessions</td>
+      </tr>
+      <tr>
+          <td>tmux attach -t #</td>
+          <td>Connect to an active session (# = session number)</td>
+      </tr>
+      <tr>
+          <td>tmux rename-session -t # new_name</td>
+          <td>Rename a session (# = session number)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="helpful-commands-for-interacting-with-active-sessions">Helpful Commands For Interacting With Active Sessions<a hidden class="anchor" aria-hidden="true" href="#helpful-commands-for-interacting-with-active-sessions">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Key Command</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>exit or ctrl-d</td>
+          <td>Exit an active session, window, or pane</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then shift-5</td>
+          <td>Create another pane</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then arrow keys</td>
+          <td>Move between panes</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then c</td>
+          <td>Create a new window</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then n</td>
+          <td>Move to the next window</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then p</td>
+          <td>Move to the previous window</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then d</td>
+          <td>Detach current session</td>
+      </tr>
+      <tr>
+          <td>ctrl-b then D</td>
+          <td>Detach session of choice</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>There you have it! The very basics of installing and using Tmux to enhance your terminal experience. We only scratched the surface of what Tmux is capable of, so continue learning by visiting <a href="https://github.com/tmux/tmux/wiki/Getting-Started">https://github.com/tmux/tmux/wiki/Getting-Started</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://example.org/tags/linux/">Linux</a></li>
+      <li><a href="https://example.org/tags/tools/">Tools</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://example.org/posts/unraid-dashy-fix/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Unraid Dashy Fix</span>
+  </a>
+  <a class="next" href="https://example.org/posts/getting-started-with-homebrew/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Getting Started With Homebrew</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://example.org/">Brian Murray</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

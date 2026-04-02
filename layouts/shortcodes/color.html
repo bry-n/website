@@ -1,0 +1,2 @@
+{{ $color := .Get 0 | safeCSS }}
+<span style="color: {{ $color }};">{{ .Inner }}</span>

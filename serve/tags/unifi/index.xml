@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unifi on Brian Murray</title>
+    <link>https://example.org/tags/unifi/</link>
+    <description>Recent content in Unifi on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/unifi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UniFi Controller on Linux</title>
+      <link>https://example.org/posts/unifi-controller-on-linux/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/unifi-controller-on-linux/</guid>
+      <description>&lt;p&gt;I recently purchased a UniFi Switch 8 60W for around $85 at Staples. You can read more about the switch here:&lt;br&gt;
+&lt;a href=&#34;https://www.ui.com/unifi-switching/unifi-switch-8/&#34;&gt;https://www.ui.com/unifi-switching/unifi-switch-8/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I also use Ubiquiti&amp;rsquo;s UniFi 802.11ac Dual-Radio PRO Access Point (UAP-AC-PRO-US).  Both the switch and the wireless ap require Ubiquiti’s UniFi Controller software. I decided to run the UniFi Controller on an Ubuntu Server 20.04 virtual machine. I wrote a simple bash script to automate the install of the controller software. The script can be downloaded from my github page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

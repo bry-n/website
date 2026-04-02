@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Selfhost on Brian Murray</title>
+    <link>https://example.org/tags/selfhost/</link>
+    <description>Recent content in Selfhost on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Feb 2023 14:07:50 -0500</lastBuildDate>
+    <atom:link href="https://example.org/tags/selfhost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unraid Dashy Fix</title>
+      <link>https://example.org/posts/unraid-dashy-fix/</link>
+      <pubDate>Sun, 19 Feb 2023 14:07:50 -0500</pubDate>
+      <guid>https://example.org/posts/unraid-dashy-fix/</guid>
+      <description>&lt;h2 id=&#34;issue-with-installing-dashy-on-unraid&#34;&gt;Issue with installing Dashy on UnRaid&lt;/h2&gt;
+&lt;p&gt;I ran into a tiny problem while setting up Dashy on my UnRaid server. I discovered that after installing the Dashy app the conf.yml file is setup as a directory not as a file. This prevents Dashy from starting correctly.  To be fair, instructions for downloading the config are provided in the app description.
+When trying to run Dashy without downloading a new config file you may see a similar error about attempting to mount a directory onto a file.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

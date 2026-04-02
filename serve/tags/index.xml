@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Brian Murray</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2024 16:53:11 -0500</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://example.org/tags/linux/</link>
+      <pubDate>Tue, 02 Apr 2024 16:53:11 -0500</pubDate>
+      <guid>https://example.org/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>https://example.org/tags/hardware/</link>
+      <pubDate>Wed, 06 Mar 2024 16:31:48 -0500</pubDate>
+      <guid>https://example.org/tags/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Selfhost</title>
+      <link>https://example.org/tags/selfhost/</link>
+      <pubDate>Sun, 19 Feb 2023 14:07:50 -0500</pubDate>
+      <guid>https://example.org/tags/selfhost/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://example.org/tags/tools/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Macos</title>
+      <link>https://example.org/tags/macos/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unifi</title>
+      <link>https://example.org/tags/unifi/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/unifi/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

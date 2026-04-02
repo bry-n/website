@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Brian Murray</title>
+    <link>https://example.org/tags/linux/</link>
+    <description>Recent content in Linux on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2024 16:53:11 -0500</lastBuildDate>
+    <atom:link href="https://example.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian 12 Virtualbox Install</title>
+      <link>https://example.org/posts/debian-12-virtualbox-install/</link>
+      <pubDate>Tue, 02 Apr 2024 16:53:11 -0500</pubDate>
+      <guid>https://example.org/posts/debian-12-virtualbox-install/</guid>
+      <description>&lt;h2 id=&#34;what-is-virtualbox&#34;&gt;What is VirtualBox&lt;/h2&gt;
+&lt;p&gt;VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you&amp;rsquo;re following along and you are not running Debian 12, don&amp;rsquo;t worry! These instructions should work on all Debian-based linux distributions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HP865 G9 Elitebook Review</title>
+      <link>https://example.org/posts/hp865-g9-elitebook-review/</link>
+      <pubDate>Wed, 06 Mar 2024 16:31:48 -0500</pubDate>
+      <guid>https://example.org/posts/hp865-g9-elitebook-review/</guid>
+      <description>&lt;p&gt;I’ve been using the same laptop since 2015. It’s not the only laptop I own, but it&amp;rsquo;s the one I use the most. It’s the very reliable Mid-2015 15-inch MacBook Pro. Anyone familiar with the mid-2015 model knows it’s a very well-built and reliable laptop. However, I was in search of a new laptop to replace the MacBook Pro. I had a few specific requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgradeable RAM, storage, WiFi, etc. The more, the better.&lt;/li&gt;
+&lt;li&gt;15-inch display with adequate brightness and color accuracy.&lt;/li&gt;
+&lt;li&gt;Rigid chassis as laptops with too much flex tend to break easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My usage requirements are pretty straightforward. I like to move around the house when working on projects and didn’t want to be confined to just my office. Hence, a 15-inch screen is a must. Linux support is also crucial, as Linux is my operating system of choice. I run Debian or Debian-based operating systems on all of my computers and servers. I&amp;rsquo;m a very casual gamer, so a dedicated Graphics Processing Unit (GPU) is not needed, which immediately ruled out all gaming laptops. Integrated AMD or Intel graphics suffice for my needs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Tmux</title>
+      <link>https://example.org/posts/getting-started-with-tmux/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/getting-started-with-tmux/</guid>
+      <description>&lt;h2 id=&#34;what-is-tmux&#34;&gt;What is Tmux&lt;/h2&gt;
+&lt;p&gt;Tmux is an awesome terminal multiplexor.  It&amp;rsquo;s a command line tool which will allow you to run multiple programs from within Tmux.  Let&amp;rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Go on Kali</title>
+      <link>https://example.org/posts/installing-go-on-kali/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/installing-go-on-kali/</guid>
+      <description>&lt;p&gt;In this post you will learn how to install the Go programming language on Kali Linux using the terminal. The commands in the code blocks can be copied and pasted directly into the terminal.&lt;/p&gt;
+&lt;h4 id=&#34;downloading-go&#34;&gt;Downloading Go&lt;/h4&gt;
+&lt;p&gt;You can either download GO by visiting &lt;a href=&#34;https://golang.org/&#34;&gt;https://golang.org/&lt;/a&gt; or you can use the curl command like so.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -L -O https://golang.org/dl/go1.15.linux-amd64.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;installing-go&#34;&gt;Installing Go&lt;/h4&gt;
+&lt;p&gt;You need to untar Go.*.tar.gz to /usr/local. This can be done by running the tar command and specifying which directory to untar the contents to like so.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

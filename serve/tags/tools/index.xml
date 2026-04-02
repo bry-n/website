@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tools on Brian Murray</title>
+    <link>https://example.org/tags/tools/</link>
+    <description>Recent content in Tools on Brian Murray</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started With Tmux</title>
+      <link>https://example.org/posts/getting-started-with-tmux/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/getting-started-with-tmux/</guid>
+      <description>&lt;h2 id=&#34;what-is-tmux&#34;&gt;What is Tmux&lt;/h2&gt;
+&lt;p&gt;Tmux is an awesome terminal multiplexor.  It&amp;rsquo;s a command line tool which will allow you to run multiple programs from within Tmux.  Let&amp;rsquo;s cover some basic terminology real quick. At a high level Tmux has sessions, windows, and panes. A session is started when we run the Tmux command from our favorite terminal. A session contains the windows and panes. A window contains the panes, and a pane is where we will interact with the terminal. &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

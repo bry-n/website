@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Debian 12 Virtualbox Install | Brian Murray</title>
+<meta name="keywords" content="linux">
+<meta name="description" content="What is VirtualBox
+VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you&rsquo;re following along and you are not running Debian 12, don&rsquo;t worry! These instructions should work on all Debian-based linux distributions.">
+<meta name="author" content="Brian">
+<link rel="canonical" href="https://example.org/posts/debian-12-virtualbox-install/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/debian-12-virtualbox-install/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://example.org/posts/debian-12-virtualbox-install/">
+  <meta property="og:site_name" content="Brian Murray">
+  <meta property="og:title" content="Debian 12 Virtualbox Install">
+  <meta property="og:description" content="What is VirtualBox VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you’re following along and you are not running Debian 12, don’t worry! These instructions should work on all Debian-based linux distributions.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-02T16:53:11-05:00">
+    <meta property="article:modified_time" content="2024-04-02T16:53:11-05:00">
+    <meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Debian 12 Virtualbox Install">
+<meta name="twitter:description" content="What is VirtualBox
+VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you&rsquo;re following along and you are not running Debian 12, don&rsquo;t worry! These instructions should work on all Debian-based linux distributions.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://example.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Debian 12 Virtualbox Install",
+      "item": "https://example.org/posts/debian-12-virtualbox-install/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Debian 12 Virtualbox Install",
+  "name": "Debian 12 Virtualbox Install",
+  "description": "What is VirtualBox VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you\u0026rsquo;re following along and you are not running Debian 12, don\u0026rsquo;t worry! These instructions should work on all Debian-based linux distributions.\n",
+  "keywords": [
+    "linux"
+  ],
+  "articleBody": "What is VirtualBox VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you’re following along and you are not running Debian 12, don’t worry! These instructions should work on all Debian-based linux distributions.\nInstalling VirtualBox Step 1 Check and install any updates\nsudo apt update \u0026\u0026 sudo apt upgrade -y Step 2 Install required packages\nsudo apt install gcc make linux-headers-$(uname -r) dkms -y Step 3 Add the Oracle VirtualBox public key\ncurl https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /etc/apt/trusted.gpg.d/vbox.gpg Step 4 Add the Oracle VirtualBox repository\necho \"deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bookworm contrib\" | sudo tee /etc/apt/sources.list.d/virtualbox.list Step 5 Update the repositories and install the latest version of VirtualBox\nsudo apt update \u0026\u0026 sudo apt install virtualbox-7.0 -y Step 7 Add your current username to the vboxusers users group\nsudo usermod -aG vboxusers $USER Wrapping Up We are now ready to start building virtual machines using VirtualBox. I hope you found this short install guide helpful.\nStay curious,\n-Brian\nHelpful Links https://www.virtualbox.org/manual/UserManual.html#install-linux-host\n",
+  "wordCount" : "205",
+  "inLanguage": "en",
+  "datePublished": "2024-04-02T16:53:11-05:00",
+  "dateModified": "2024-04-02T16:53:11-05:00",
+  "author":{
+    "@type": "Person",
+    "name": "Brian"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.org/posts/debian-12-virtualbox-install/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Brian Murray",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="Brian Murray (Alt + H)">Brian Murray</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://example.org/">Home</a>&nbsp;»&nbsp;<a href="https://example.org/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Debian 12 Virtualbox Install
+    </h1>
+    <div class="post-meta"><span title='2024-04-02 16:53:11 -0500 -0500'>April 2, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Brian</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-virtualbox" aria-label="What is VirtualBox">What is VirtualBox</a></li>
+                <li>
+                    <a href="#installing-virtualbox" aria-label="Installing VirtualBox">Installing VirtualBox</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#step-1" aria-label="Step 1">Step 1</a></li>
+                <li>
+                    <a href="#step-2" aria-label="Step 2">Step 2</a></li>
+                <li>
+                    <a href="#step-3" aria-label="Step 3">Step 3</a></li>
+                <li>
+                    <a href="#step-4" aria-label="Step 4">Step 4</a></li>
+                <li>
+                    <a href="#step-5" aria-label="Step 5">Step 5</a></li>
+                <li>
+                    <a href="#step-7" aria-label="Step 7">Step 7</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#wrapping-up" aria-label="Wrapping Up">Wrapping Up</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="what-is-virtualbox">What is VirtualBox<a hidden class="anchor" aria-hidden="true" href="#what-is-virtualbox">#</a></h2>
+<p>VirtualBox is a free and open source Type-2 hypervisor owned and maintained by Oracle. A Type-2 hypervisor means it runs as an application on an operating system. This means you can run VirtualBox on your Linux, Mac, or Windows computer. In this post, we will install VirtualBox on Debian 12. If you&rsquo;re following along and you are not running Debian 12, don&rsquo;t worry! These instructions should work on all Debian-based linux distributions.</p>
+<h2 id="installing-virtualbox">Installing VirtualBox<a hidden class="anchor" aria-hidden="true" href="#installing-virtualbox">#</a></h2>
+<h4 id="step-1">Step 1<a hidden class="anchor" aria-hidden="true" href="#step-1">#</a></h4>
+<p>Check and install any updates</p>
+<pre tabindex="0"><code>sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre><h4 id="step-2">Step 2<a hidden class="anchor" aria-hidden="true" href="#step-2">#</a></h4>
+<p>Install required packages</p>
+<pre tabindex="0"><code>sudo apt install gcc make linux-headers-$(uname -r) dkms -y
+</code></pre><h4 id="step-3">Step 3<a hidden class="anchor" aria-hidden="true" href="#step-3">#</a></h4>
+<p>Add the Oracle VirtualBox public key</p>
+<pre tabindex="0"><code>curl https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /etc/apt/trusted.gpg.d/vbox.gpg
+</code></pre><h4 id="step-4">Step 4<a hidden class="anchor" aria-hidden="true" href="#step-4">#</a></h4>
+<p>Add the Oracle VirtualBox repository</p>
+<pre tabindex="0"><code>echo &#34;deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bookworm contrib&#34; | sudo tee /etc/apt/sources.list.d/virtualbox.list
+</code></pre><h4 id="step-5">Step 5<a hidden class="anchor" aria-hidden="true" href="#step-5">#</a></h4>
+<p>Update the repositories and install the latest version of VirtualBox</p>
+<pre tabindex="0"><code>sudo apt update &amp;&amp; sudo apt install virtualbox-7.0 -y
+</code></pre><h4 id="step-7">Step 7<a hidden class="anchor" aria-hidden="true" href="#step-7">#</a></h4>
+<p>Add your current username to the vboxusers users group</p>
+<pre tabindex="0"><code>sudo usermod -aG vboxusers $USER
+</code></pre><h2 id="wrapping-up">Wrapping Up<a hidden class="anchor" aria-hidden="true" href="#wrapping-up">#</a></h2>
+<p>We are now ready to start building virtual machines using VirtualBox. I hope you found this short install guide helpful.</p>
+<p>Stay curious,</p>
+<p>-Brian</p>
+<p>Helpful Links
+<a href="https://www.virtualbox.org/manual/UserManual.html#install-linux-host">https://www.virtualbox.org/manual/UserManual.html#install-linux-host</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://example.org/tags/linux/">Linux</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://example.org/posts/hp865-g9-elitebook-review/">
+    <span class="title">Next »</span>
+    <br>
+    <span>HP865 G9 Elitebook Review</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://example.org/">Brian Murray</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
