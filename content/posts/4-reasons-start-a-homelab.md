@@ -1,8 +1,8 @@
 ---
 date: '2024-10-13T20:14:39-04:00'
 draft: false
-title: '4 Reasons Start a Homelab'
-slug: /4-reasons-start-a-homelab
+title: '4 Reasons to Start a Homelab'
+slug: /4-reasons-to-start-a-homelab
 tags: ["homelab"]
 author: Brian
 ---
