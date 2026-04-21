@@ -49,6 +49,11 @@ params:
     Title: Hi There....
     Content: >
       Enjoy reading my thoughts on technology and security.
+  # Global Author Definition
+  #author:
+   # name: "Brian"
+  # PaperMod Specific Parameter
+  author: "Brian"
       
   assets:
     favicon: "/icons/favicon.ico"

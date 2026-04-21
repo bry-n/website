@@ -4,7 +4,6 @@ draft: false
 title: 'Unraid Dashy Fix'
 slag: /unraid-dashy-fix
 tags: ["selfhost"]
-author: Brian
 ---
 ## Issue with installing Dashy on UnRaid
 I ran into a tiny problem while setting up Dashy on my UnRaid server. I discovered that after installing the Dashy app the conf.yml file is setup as a directory not as a file. This prevents Dashy from starting correctly.  To be fair, instructions for downloading the config are provided in the app description.

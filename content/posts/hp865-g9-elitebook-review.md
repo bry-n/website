@@ -4,7 +4,6 @@ draft: false
 title: 'HP865 G9 Elitebook Review'
 slug: /hp865-g9-elitebook-review
 tags: ["linux", "hardware"]
-author: Brian
 ---
 
 I’ve been using the same laptop since 2015. It’s not the only laptop I own, but it's the one I use the most. It’s the very reliable Mid-2015 15-inch MacBook Pro. Anyone familiar with the mid-2015 model knows it’s a very well-built and reliable laptop. However, I was in search of a new laptop to replace the MacBook Pro. I had a few specific requirements:

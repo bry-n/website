@@ -4,7 +4,6 @@ draft: false
 title: Getting Started With Homebrew
 slug: /getting-started-with-homebrew/
 tags: ["macos"]
-author: Brian
 ---
 
 

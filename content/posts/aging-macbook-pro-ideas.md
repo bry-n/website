@@ -4,7 +4,6 @@ draft: false
 title: 'Aging Macbook Pro Ideas'
 slug: /aging-macbook-pro-ideas
 tags: ["hardware", "macos"]
-author: Brian
 ---
 
 ## What to do with an aging laptop?

@@ -4,7 +4,6 @@ draft: false
 title: Getting Started With Tmux
 slug: /getting-started-with-tmux/
 tags: ["linux", "tools"]
-author: Brian
 ---
 
 ## What is Tmux
