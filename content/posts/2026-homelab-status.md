@@ -18,14 +18,14 @@ My homelab is a mix of old and new equipment. Last year I upgraded the network t
 - Wireless = 2x TP-Link Deco M9+ nodes
 - UnRaid = 2018 custom built desktop with SFP+ PCIe card
 - Proxmox = Dell Optiplex 5050 with SFP+ PCIe card
-- Laptop = HP G9 865 (my review)
+- Laptop = HP G9 865 [read my review]({{< relref "hp865-g9-elitebook-review.md" >}})
 - Wireless Testing = 1x Ubiquiti AC-PRO
 
 I also have a random assortment of laptops, monitors, and single board computers which are used as needed.
 
 ## Network Diagram
 Here’s how my network is currently laid out. It’s nothing fancy but it shows a basic data flow.
-![](/img/network.png "Basic Network Diagram")
+![](/img/network170.png "Basic Network Diagram")
 
 Here's the current setup in the network closet.
 ![](/img/networkcloset.jpg "Network Closet")
