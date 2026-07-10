@@ -55,6 +55,6 @@ sudo systemctl restart systemd-logind
 ## Wrapping Up
 Now you should be able to put your Arch Linux laptop into clamshell without it going into suspend.
 
-Stay Curious,
+Stay curious,
 
 -Brian
