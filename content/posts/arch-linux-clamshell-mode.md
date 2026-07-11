@@ -1,5 +1,5 @@
 ---
-date: '2026-06-02T20:13:14-04:00'
+date: '2026-07-11T18:00:00-04:00'
 draft: false
 title: 'Arch Linux Clamshell Mode'
 slug: /arch-linux-clamshell-mode
