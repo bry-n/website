@@ -9,7 +9,7 @@ tag: ["linux"]
 I recently found myself with a new monitor which supports power and display over USB-C. This is great because I've been working on reducing clutter on my desk.
 
 ## The Issue
-I quickly discovered putting my laptop into clamshell mode cause the laptop to go into suspend mode. This occurred when the laptop was connected over USB-C to the monitor. This issue could be specific to my setup or similar setups. I'm running Arch Linux with the newly release Cosmic Desktop by System76. At the time of this writing there are no clamshell settings to configure in Cosmic.
+I quickly discovered putting my laptop into clamshell mode caused the laptop to go into suspend mode. This occurred when the laptop was connected over USB-C to the monitor. This issue could be specific to my setup or similar setups. I'm running Arch Linux with Cosmic Desktop by System76. At the time of this writing there are no clamshell settings to configure in Cosmic.
 
 ## The Fix
 The simple fix is to modify the logind.conf file. There are three lines we need to edit. The exact file path for logind.conf can be found here: `/etc/systemd/logind.conf`
@@ -53,7 +53,7 @@ Finally, we need to reload logind.conf.
 sudo systemctl restart systemd-logind
 ```
 ## Wrapping Up
-Now you should be able to put your Arch Linux laptop into clamshell without it going into suspend.
+Now you should be able to put your Arch Linux laptop into clamshell mode without it going into suspend mode.
 
 Stay curious,
 
