@@ -54,6 +54,7 @@ params:
    # name: "Brian"
   # PaperMod Specific Parameter
   author: "Brian"
+  ShowFullTextinRSS: true
       
   assets:
     favicon: "/icons/favicon.ico"
@@ -70,3 +71,5 @@ params:
     - name: Medium
       title: Read this on Medium
       url: "https://medium.com/@brian_murray"
+    - name: RSS
+      url: "https://www.brianmurray.tech/index.xml"
